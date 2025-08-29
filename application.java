@@ -20,9 +20,9 @@ public class Application implements CommandLineRunner {
         // -------- Step 1: Register --------
         String registerUrl = "https://bfhldevapigw.healthrx.co.in/hiring/generateWebhook/JAVA";
         Map<String,String> regBody = new HashMap<>();
-        regBody.put("name", "Your Name");         // 👈 apna naam
-        regBody.put("regNo", "REG12345");         // 👈 apna reg no
-        regBody.put("email", "you@email.com");    // 👈 apna email
+        regBody.put("name", "JIYA SUGLA");         
+        regBody.put("regNo", "22BEC0114");         
+        regBody.put("email", "jiyasugla@gmail.com");    
 
         HttpHeaders h = new HttpHeaders();
         h.setContentType(MediaType.APPLICATION_JSON);
@@ -38,19 +38,19 @@ public class Application implements CommandLineRunner {
         System.out.println("Access Token = " + accessToken);
 
         // -------- Step 2: Decide SQL question --------
-        // 👇 last two digits nikalo odd/even check karne ke liye
+        
         String regNoDigits = regBody.get("regNo").replaceAll("\\D", "");
         int lastTwo = Integer.parseInt(regNoDigits.substring(regNoDigits.length()-2));
         boolean odd = lastTwo % 2 == 1;
 
         if (odd) {
-            System.out.println("👉 Open odd SQL question: https://drive.google.com/file/d/1IeSI6l6KoSQAFfRihIT9tEDICtoz−G/view");
+            System.out.println("Open odd SQL question: https://drive.google.com/file/d/1IeSI6l6KoSQAFfRihIT9tEDICtoz−G/view");
         } else {
-            System.out.println("👉 Open even SQL question: https://drive.google.com/file/d/143MR5cLFrlNEuHzzWJ5RHnEWuijuM9X/view");
+            System.out.println(" Open even SQL question: https://drive.google.com/file/d/143MR5cLFrlNEuHzzWJ5RHnEWuijuM9X/view");
         }
 
         // -------- Step 3: Put your final SQL query here --------
-        // 👇 yaha apna query likho
+        
         String finalQuery = "SELECT * FROM tableName;";
 
         // -------- Step 4: Submit solution --------
@@ -69,3 +69,4 @@ public class Application implements CommandLineRunner {
         System.out.println("Submit Response: " + resp2.getBody());
     }
 }
+
